@@ -1,0 +1,463 @@
+<html><head>
+<title>PI SIGMA</title>
+<style>
+:root {
+  --main-red: #cc0000;
+  --main-yellow: #ffd700;
+  --main-black: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+}
+
+.header {
+  background-color: var(--main-black);
+  display: flex;
+  justify-content: space-between;
+  
+}
+h1 {
+  color: yellow;
+}
+
+.logo {
+  width: 900px;
+  height: 200px;
+  margin: 10px auto;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Center the content */
+  flex-direction: column;
+  padding-bottom: 20px;
+
+} 
+.logo-text {
+  font-size: 32px; /* Adjust text size as needed */
+  color: yellow; /* Text color */
+  margin-top: -27px; /* Space between logo and text */
+  font-weight: bolder;
+}
+
+.logo img {
+  width: 25%;
+  height: 90%;
+  object-fit: contain;
+}
+div {
+  unicode-bidi: isolate;
+}
+
+nav {
+  background-color: var(--main-red);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--main-yellow);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: var(--main-yellow);
+  color: var(--main-red);
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Add new styles for the slider */
+.slider-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.slide-image {
+  width: 100%;
+  height: 500px;
+  background-color: var(--main-red);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-yellow);
+  font-size: 2rem;
+  object-fit: cover;
+}
+.slide-image2 {
+  width: 40%;
+  height: 400px;
+}
+
+.slide-text {
+  text-align: center;
+  max-width: 800px;
+}
+
+.slider-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.slider-btn {
+  padding: 0.5rem 1rem;
+  background-color: var(--main-red);
+  color: var(--main-yellow);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-btn:hover {
+  background-color: var(--main-yellow);
+  color: var(--main-red);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.pagination button {
+  padding: 0.5rem 1rem;
+  background-color: var(--main-red);
+  color: var(--main-yellow);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination button:hover {
+  background-color: var(--main-yellow);
+  color: var(--main-red);
+}
+
+footer {
+  background-color: var(--main-black);
+  color: var(--main-yellow);
+  padding: 2rem;
+  text-align: center;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Add styles for new content sections */
+.content-section {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin: 4rem 0;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.content-section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.section-image {
+  flex: 1;
+  min-height: 300px;
+  background-color: var(--main-red);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-yellow);
+  font-size: 1.5rem;
+}
+
+.section-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.section-text h2 {
+  color: var(--main-red);
+  font-size: 2rem;
+}
+
+.section-text p {
+  line-height: 1.6;
+  color: var(--main-black);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .content-section,
+  .content-section:nth-child(even) {
+    flex-direction: column;
+  }
+  
+  .section-image {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="images/pisigma.png" alt="Pi Sigma Logo" class="logo">
+      <span class="logo-text">"Paragon of Scholarship; Paglingkuran ang Sambayanan"</span>  
+    </div>
+  </div>
+  </header>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="chapter.html">Chapters</a></li>
+      <li><a href="community-service.html">Community Services</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="news-announcements.html">News and Announcements</a></li>
+      <li><a href="join-us.html">Join Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <div class="slider-container">
+      <div class="slider">
+        <div class="slide">
+          <div class="slide-image">
+            <img src="images/jun.jpg" alt="Brotherhood Event" class="slide-image2">
+          </div>
+          <div class="slide-text">
+            <h2>Annual Brotherhood Gathering</h2>
+            <p>Join us for our annual brotherhood gathering where members from all chapters come together to celebrate our fraternity's values and achievements.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-image">
+            <img src="images/fernan.jpg" alt="Brotherhood Event" class="slide-image2">
+          </div>
+
+          <div class="slide-text">
+            <h2>Community Outreach Program</h2>
+            <p>PI SIGMA members actively participate in various community service projects, making a positive impact in our local communities.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-image">Academic Excellence</div>
+          <div class="slide-text">
+            <h2>Academic Achievement Awards</h2>
+            <p>We recognize and celebrate the academic achievements of our members through our annual awards ceremony.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-image">Leadership Development</div>
+          <div class="slide-text">
+            <h2>Leadership Training</h2>
+            <p>Our comprehensive leadership development program prepares members for success in their personal and professional lives.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-image">Social Events</div>
+          <div class="slide-text">
+            <h2>Social Gatherings</h2>
+            <p>Experience the true spirit of brotherhood through our various social events and activities throughout the year.</p>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-image">Alumni Network</div>
+          <div class="slide-text">
+            <h2>Alumni Connections</h2>
+            <p>Stay connected with our strong alumni network and benefit from mentorship opportunities and professional networking.</p>
+          </div>
+        </div>
+      </div>
+      <div class="slider-buttons">
+        <button class="slider-btn" onclick="prevSlide()">Previous</button>
+        <button class="slider-btn" onclick="nextSlide()">Next</button>
+      </div>
+    </div>
+
+    <section class="content-section">
+        <div class="section-image">History & Heritage</div>
+        <div class="section-text">
+            <h2>Our Rich History</h2>
+            <p>Founded in 1972, PI SIGMA has established itself as a beacon of excellence in brotherhood and leadership. Our fraternity has grown from humble beginnings to become a respected institution across multiple chapters nationwide.</p>
+            <p>Through decades of dedication to our core values, we have shaped countless leaders and fostered lifelong bonds among our members.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-image">Leadership Excellence</div>
+        <div class="section-text">
+            <h2>Developing Tomorrow's Leaders</h2>
+            <p>At PI SIGMA, leadership development is at the core of our mission. We provide comprehensive training programs, mentorship opportunities, and hands-on experience in organizational management.</p>
+            <p>Our members graduate not just with degrees, but with the skills and confidence to lead in their chosen fields.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-image">Community Impact</div>
+        <div class="section-text">
+            <h2>Making a Difference</h2>
+            <p>Service to our community is a fundamental aspect of PI SIGMA's identity. Our members contribute thousands of volunteer hours annually through various initiatives and partnerships with local organizations.</p>
+            <p>From food drives to educational programs, we're committed to creating positive change in our communities.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="section-image">Brotherhood Bond</div>
+        <div class="section-text">
+            <h2>Lifelong Brotherhood</h2>
+            <p>The bonds formed within PI SIGMA extend far beyond college years. Our brotherhood creates a network of support, friendship, and professional connections that last a lifetime.</p>
+            <p>Through our various events and activities, we strengthen these bonds and create memories that will last forever.</p>
+        </div>
+    </section>
+
+    <div id="content">
+      <!-- Content will be dynamically loaded here -->
+    </div>
+
+    <div class="pagination">
+      <button onclick="previousPage()">Previous</button>
+      <button onclick="nextPage()">Next</button>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Email: info@pisigma.org</p>
+        <p>Phone: (123) 456-7890</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <p>Facebook</p>
+        <p>Twitter</p>
+        <p>Instagram</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <p>Privacy Policy</p>
+        <p>Terms of Service</p>
+        <p>FAQ</p>
+      </div>
+    </div>
+    <p style="margin-top: 2rem;">&copy; 2024 PI SIGMA Fraternity. All rights reserved.</p>
+  </footer>
+
+<script>
+let currentPage = 1;
+const itemsPerPage = 10;
+
+function loadContent(page) {
+    // This function would typically fetch content from a server
+    // For demonstration, we'll just update a message
+    const content = document.getElementById('content');
+    content.innerHTML = `<h2>Page ${page}</h2>
+                        <p>This is the content for page ${page}.</p>`;
+}
+
+function previousPage() {
+    if (currentPage > 1) {
+        currentPage--;
+        loadContent(currentPage);
+    }
+}
+
+function nextPage() {
+    // Assume we have a maximum of 10 pages
+    if (currentPage < 10) {
+        currentPage++;
+        loadContent(currentPage);
+    }
+}
+
+// Initial load
+loadContent(currentPage);
+
+// Add new slider functionality
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const slider = document.querySelector('.slider');
+
+function updateSlider() {
+  slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  updateSlider();
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  updateSlider();
+}
+
+// Auto-advance slides every 5 seconds
+setInterval(nextSlide, 5000);
+</script>
+
+</body></html>

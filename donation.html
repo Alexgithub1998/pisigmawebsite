@@ -1,0 +1,515 @@
+<html><head>
+<title>PI SIGMA - Support Our Mission</title>
+<style>
+:root {
+  --main-red: #cc0000;
+  --main-yellow: #ffd700;
+  --main-black: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+}
+
+.header {
+  background-color: var(--main-black);
+  padding: 1rem;
+  text-align: center;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin: 10px auto;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+nav {
+  background-color: var(--main-red);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--main-yellow);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: var(--main-yellow);
+  color: var(--main-red);
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.join-section {
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.join-section h2 {
+  color: var(--main-red);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.donation-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.donation-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid #eee;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.donation-card:hover {
+  border-color: var(--main-red);
+  transform: translateY(-5px);
+}
+
+.donation-card.selected {
+  border-color: var(--main-red);
+  background: #fff9f9;
+}
+
+.donation-amount {
+  font-size: 2rem;
+  color: var(--main-red);
+  margin: 1rem 0;
+}
+
+.custom-amount {
+  width: 100%;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  border: 2px solid #eee;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.impact-section {
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.impact-card {
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.impact-number {
+  font-size: 2.5rem;
+  color: var(--main-red);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.payment-section {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.recurring-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.toggle-btn {
+  padding: 0.8rem 1.5rem;
+  border: 2px solid var(--main-red);
+  border-radius: 5px;
+  background: white;
+  color: var(--main-red);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+  background: var(--main-red);
+  color: white;
+}
+
+.donor-wall {
+  background: linear-gradient(45deg, var(--main-black), var(--main-red));
+  color: white;
+  padding: 3rem;
+  border-radius: 10px;
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.donor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.donor-card {
+  background: rgba(255,255,255,0.1);
+  padding: 1.5rem;
+  border-radius: 5px;
+}
+
+.donor-level {
+  color: var(--main-yellow);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.footer {
+  background-color: var(--main-black);
+  color: white;
+  padding: 3rem 0 1rem;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.footer-section h3 {
+  color: var(--main-yellow);
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.footer-section p {
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--main-yellow);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--main-yellow);
+}
+
+.social-text {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.footer-tagline {
+  margin-top: 0.5rem;
+  color: var(--main-yellow);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .timeline-item {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-section {
+    text-align: center;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+}
+</style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="/a/e164815c-48f9-4ec0-a568-a7f465f403c3" alt="PI SIGMA Fraternity Logo - circular emblem with gold letters on red and black background, established 1972">
+    </div>
+  </header>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="chapter.html">Chapters</a></li>
+      <li><a href="community-service.html">Community Services</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="news-announcements.html">News and Announcements</a></li>
+      <li><a href="join-us.html">Join Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <h1 style="text-align: center; color: var(--main-red); margin: 2rem 0;">Support PI SIGMA</h1>
+
+    <section class="join-section">
+      <h2>Choose Your Impact</h2>
+      <div class="recurring-toggle">
+        <button class="toggle-btn active" data-type="one-time">One-Time Gift</button>
+        <button class="toggle-btn" data-type="monthly">Monthly Donation</button>
+      </div>
+      
+      <div class="donation-options">
+        <div class="donation-card">
+          <h3>Supporter</h3>
+          <div class="donation-amount">$25</div>
+          <p>Help fund our community service projects</p>
+        </div>
+        <div class="donation-card">
+          <h3>Partner</h3>
+          <div class="donation-amount">$50</div>
+          <p>Support scholarship programs</p>
+        </div>
+        <div class="donation-card">
+          <h3>Benefactor</h3>
+          <div class="donation-amount">$100</div>
+          <p>Enable leadership development initiatives</p>
+        </div>
+        <div class="donation-card">
+          <h3>Custom Amount</h3>
+          <input type="number" class="custom-amount" placeholder="Enter amount" min="1">
+        </div>
+      </div>
+    </section>
+
+    <section class="impact-section">
+      <h2>Your Impact</h2>
+      <div class="impact-grid">
+        <div class="impact-card">
+          <div class="impact-number">50+</div>
+          <h3>Scholarships Awarded</h3>
+          <p>Supporting academic excellence</p>
+        </div>
+        <div class="impact-card">
+          <div class="impact-number">1000+</div>
+          <h3>Community Service Hours</h3>
+          <p>Making a difference locally</p>
+        </div>
+        <div class="impact-card">
+          <div class="impact-number">25+</div>
+          <h3>Leadership Programs</h3>
+          <p>Developing future leaders</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="payment-section">
+      <h2>Payment Information</h2>
+      <form class="join-form">
+        <div class="form-group">
+          <label for="cardName">Name on Card *</label>
+          <input type="text" id="cardName" required>
+        </div>
+        <div class="form-group">
+          <label for="cardNumber">Card Number *</label>
+          <input type="text" id="cardNumber" required>
+        </div>
+        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div>
+            <label for="expiry">Expiry Date *</label>
+            <input type="text" id="expiry" placeholder="MM/YY" required>
+          </div>
+          <div>
+            <label for="cvv">CVV *</label>
+            <input type="text" id="cvv" required>
+          </div>
+        </div>
+        <button type="submit" class="submit-btn">Complete Donation</button>
+      </form>
+    </section>
+
+    <section class="donor-wall">
+      <h2>Donor Recognition</h2>
+      <div class="donor-grid">
+        <div class="donor-card">
+          <div class="donor-level">Platinum Donor</div>
+          <p>Recognition in annual report</p>
+          <p>Invitation to special events</p>
+          <p>Commemorative plaque</p>
+        </div>
+        <div class="donor-card">
+          <div class="donor-level">Gold Donor</div>
+          <p>Recognition in annual report</p>
+          <p>Invitation to special events</p>
+        </div>
+        <div class="donor-card">
+          <div class="donor-level">Silver Donor</div>
+          <p>Recognition in annual report</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@pisigma.org">info@pisigma.org</a></p>
+        <p><i class="fas fa-phone"></i> Phone: (123) 456-7890</p>
+        <p><i class="fas fa-map-marker-alt"></i> Address: 123 Fraternity Row, University City, ST 12345</p>
+        <p><i class="fas fa-clock"></i> Office Hours: Mon-Fri 9:00 AM - 5:00 PM</p>
+      </div>
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="social-links">
+          <a href="https://facebook.com/pisigma" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://twitter.com/pisigma" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/pisigma" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkedin.com/company/pisigma" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://youtube.com/pisigma" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="social-text">Stay connected with PI SIGMA across all our social platforms</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <p><a href="https://pisigma.org/about">About Us</a></p>
+        <p><a href="https://pisigma.org/chapters">Our Chapters</a></p>
+        <p><a href="https://pisigma.org/events">Events Calendar</a></p>
+        <p><a href="https://pisigma.org/alumni">Alumni Network</a></p>
+        <p><a href="https://pisigma.org/donate">Support PI SIGMA</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Resources</h3>
+        <p><a href="https://pisigma.org/privacy-policy">Privacy Policy</a></p>
+        <p><a href="https://pisigma.org/terms">Terms of Service</a></p>
+        <p><a href="https://pisigma.org/faq">FAQ</a></p>
+        <p><a href="https://pisigma.org/newsletter">Newsletter Signup</a></p>
+        <p><a href="https://pisigma.org/scholarships">Scholarship Programs</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 PI SIGMA Fraternity. All rights reserved.</p>
+      <p class="footer-tagline">Brotherhood, Excellence, Service</p>
+    </div>
+  </footer>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const donationCards = document.querySelectorAll('.donation-card');
+  donationCards.forEach(card => {
+    card.addEventListener('click', function() {
+      donationCards.forEach(c => c.classList.remove('selected'));
+      this.classList.add('selected');
+    });
+  });
+
+  const toggleBtns = document.querySelectorAll('.toggle-btn');
+  toggleBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      toggleBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+
+  const paymentForm = document.querySelector('.payment-section form');
+  paymentForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your generous donation!');
+  });
+});
+</script>
+</body></html>

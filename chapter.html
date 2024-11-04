@@ -1,0 +1,345 @@
+<html><head>
+<title>PI SIGMA - Chapters</title>
+<style>
+:root {
+  --main-red: #cc0000;
+  --main-yellow: #ffd700;
+  --main-black: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+}
+
+.header {
+  background-color: var(--main-black);
+  padding: 1rem;
+  text-align: center;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin: 10px auto;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+nav {
+  background-color: var(--main-red);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--main-yellow);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: var(--main-yellow);
+  color: var(--main-red);
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.chapters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.chapter-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.chapter-card:hover {
+  transform: translateY(-5px);
+}
+
+.chapter-logo {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1rem;
+}
+
+.chapter-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.chapter-info h3 {
+  color: var(--main-red);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.chapter-details {
+  margin-top: 1rem;
+}
+
+.chapter-details p {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chapter-details i {
+  color: var(--main-red);
+  width: 20px;
+}
+
+.region-header {
+  background: var(--main-red);
+  color: var(--main-yellow);
+  padding: 1rem;
+  margin: 2rem 0;
+  text-align: center;
+  border-radius: 5px;
+}
+
+footer {
+  background-color: var(--main-black);
+  color: white;
+  padding: 3rem 1rem;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.footer-section {
+  padding: 1rem;
+}
+
+.footer-section h3 {
+  color: var(--main-yellow);
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.footer-section p {
+  margin-bottom: 0.8rem;
+  color: #ffffff;
+}
+
+.footer-section a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--main-yellow);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--main-yellow);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+</style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="/a/e164815c-48f9-4ec0-a568-a7f465f403c3" alt="PI SIGMA Fraternity Logo - circular emblem with gold letters on red and black background, established 1972">
+    </div>
+  </header>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="chapter.html">Chapters</a></li>
+      <li><a href="community-service.html">Community Services</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="news-announcements.html">News and Announcements</a></li>
+      <li><a href="join-us.html">Join Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <h1 style="text-align: center; color: var(--main-red); margin: 2rem 0;">Our Chapters</h1>
+    
+    <section>
+      <h2 class="region-header">Northern Region</h2>
+      <div class="chapters-grid">
+        <div class="chapter-card">
+          <div class="chapter-logo">
+            <img src="/a/e164815c-48f9-4ec0-a568-a7f465f403c3" alt="PI SIGMA Chapter Logo">
+          </div>
+          <div class="chapter-info">
+            <h3>Alpha Chapter</h3>
+            <div class="chapter-details">
+              <p><i class="fas fa-university"></i> University of Example</p>
+              <p><i class="fas fa-map-marker-alt"></i> New York, NY</p>
+              <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+              <p><i class="fas fa-envelope"></i> alpha@pisigma.org</p>
+              <p><i class="fas fa-calendar"></i> Founded: 1972</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="chapter-card">
+          <div class="chapter-logo">
+            <img src="/a/e164815c-48f9-4ec0-a568-a7f465f403c3" alt="PI SIGMA Chapter Logo">
+          </div>
+          <div class="chapter-info">
+            <h3>Beta Chapter</h3>
+            <div class="chapter-details">
+              <p><i class="fas fa-university"></i> State University</p>
+              <p><i class="fas fa-map-marker-alt"></i> Boston, MA</p>
+              <p><i class="fas fa-phone"></i> (123) 456-7891</p>
+              <p><i class="fas fa-envelope"></i> beta@pisigma.org</p>
+              <p><i class="fas fa-calendar"></i> Founded: 1975</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="region-header">Southern Region</h2>
+      <div class="chapters-grid">
+        <div class="chapter-card">
+          <div class="chapter-logo">
+            <img src="/a/e164815c-48f9-4ec0-a568-a7f465f403c3" alt="PI SIGMA Chapter Logo">
+          </div>
+          <div class="chapter-info">
+            <h3>Gamma Chapter</h3>
+            <div class="chapter-details">
+              <p><i class="fas fa-university"></i> Southern State University</p>
+              <p><i class="fas fa-map-marker-alt"></i> Miami, FL</p>
+              <p><i class="fas fa-phone"></i> (123) 456-7892</p>
+              <p><i class="fas fa-envelope"></i> gamma@pisigma.org</p>
+              <p><i class="fas fa-calendar"></i> Founded: 1978</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="chapter-card">
+          <div class="chapter-logo">
+            <img src="/a/e164815c-48f9-4ec0-a568-a7f465f403c3" alt="PI SIGMA Chapter Logo">
+          </div>
+          <div class="chapter-info">
+            <h3>Delta Chapter</h3>
+            <div class="chapter-details">
+              <p><i class="fas fa-university"></i> Tech Institute</p>
+              <p><i class="fas fa-map-marker-alt"></i> Atlanta, GA</p>
+              <p><i class="fas fa-phone"></i> (123) 456-7893</p>
+              <p><i class="fas fa-envelope"></i> delta@pisigma.org</p>
+              <p><i class="fas fa-calendar"></i> Founded: 1980</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@pisigma.org">info@pisigma.org</a></p>
+        <p><i class="fas fa-phone"></i> Phone: (123) 456-7890</p>
+        <p><i class="fas fa-map-marker-alt"></i> Address: 123 Fraternity Row, University City, ST 12345</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="https://facebook.com/pisigma"><i class="fab fa-facebook"></i></a>
+          <a href="https://twitter.com/pisigma"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/pisigma"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkedin.com/company/pisigma"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <p><a href="https://pisigma.org/privacy-policy">Privacy Policy</a></p>
+        <p><a href="https://pisigma.org/terms">Terms of Service</a></p>
+        <p><a href="https://pisigma.org/faq">FAQ</a></p>
+        <p><a href="https://pisigma.org/contact">Contact</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 PI SIGMA Fraternity. All rights reserved.</p>
+    </div>
+  </footer>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body></html>

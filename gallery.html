@@ -1,0 +1,453 @@
+<html><head>
+<title>PI SIGMA - Gallery</title>
+<style>
+:root {
+  --main-red: #cc0000;
+  --main-yellow: #ffd700;
+  --main-black: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+}
+
+.header {
+  background-color: var(--main-black);
+  padding: 1rem;
+  text-align: center;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  margin: 10px auto;
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+nav {
+  background-color: var(--main-red);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: var(--main-yellow);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: var(--main-yellow);
+  color: var(--main-red);
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.filter-btn {
+  padding: 0.8rem 1.5rem;
+  border: 2px solid var(--main-red);
+  border-radius: 5px;
+  background: white;
+  color: var(--main-red);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active {
+  background: var(--main-red);
+  color: white;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-content {
+  position: relative;
+  aspect-ratio: 1;
+}
+
+.placeholder-img {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  transform: translateY(0);
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.modal-close {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90vh;
+  margin: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.footer {
+  background-color: var(--main-black);
+  color: white;
+  padding: 3rem 0 1rem;
+  margin-top: 4rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.footer-section h3 {
+  color: var(--main-yellow);
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.footer-section p {
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--main-yellow);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--main-yellow);
+}
+
+.social-text {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.footer-tagline {
+  margin-top: 0.5rem;
+  color: var(--main-yellow);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-item {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+</style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="/a/e164815c-48f9-4ec0-a568-a7f465f403c3" alt="PI SIGMA Fraternity Logo - circular emblem with gold letters on red and black background, established 1972">
+    </div>
+  </header>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="chapter.html">Chapters</a></li>
+      <li><a href="community-service.html">Community Services</a></li>
+      <li><a href="members.html">Members</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="news-announcements.html">News and Announcements</a></li>
+      <li><a href="join-us.html">Join Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="main-content">
+    <h1 style="text-align: center; color: var(--main-red); margin: 2rem 0;">PI SIGMA Gallery</h1>
+
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="photos">Photos</button>
+      <button class="filter-btn" data-filter="videos">Videos</button>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item photo" data-category="photos">
+        <div class="gallery-content">
+          <svg class="placeholder-img" viewBox="0 0 200 200">
+            <rect width="200" height="200" fill="#f0f0f0"/>
+            <text x="100" y="100" text-anchor="middle" fill="#666">Community Service Day 2023</text>
+          </svg>
+          <div class="gallery-overlay">
+            <h3>Community Service Day 2023</h3>
+            <p>Members volunteering at local food bank</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item photo" data-category="photos">
+        <div class="gallery-content">
+          <svg class="placeholder-img" viewBox="0 0 200 200">
+            <rect width="200" height="200" fill="#f0f0f0"/>
+            <text x="100" y="100" text-anchor="middle" fill="#666">Annual Gala 2023</text>
+          </svg>
+          <div class="gallery-overlay">
+            <h3>Annual Gala 2023</h3>
+            <p>Celebration of achievement</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-item video" data-category="videos">
+        <div class="gallery-content">
+          <div class="video-container">
+            <svg class="placeholder-img" viewBox="0 0 200 200">
+              <rect width="200" height="200" fill="#f0f0f0"/>
+              <circle cx="100" cy="100" r="30" fill="var(--main-red)"/>
+              <polygon points="90,85 90,115 115,100" fill="white"/>
+            </svg>
+          </div>
+          <div class="gallery-overlay">
+            <h3>Rush Week Highlights</h3>
+            <p>Fall 2023 Rush Events</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-modal">
+      <span class="modal-close">&times;</span>
+      <div class="modal-content"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:info@pisigma.org">info@pisigma.org</a></p>
+        <p><i class="fas fa-phone"></i> Phone: (123) 456-7890</p>
+        <p><i class="fas fa-map-marker-alt"></i> Address: 123 Fraternity Row, University City, ST 12345</p>
+        <p><i class="fas fa-clock"></i> Office Hours: Mon-Fri 9:00 AM - 5:00 PM</p>
+      </div>
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="social-links">
+          <a href="https://facebook.com/pisigma" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://twitter.com/pisigma" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/pisigma" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkedin.com/company/pisigma" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://youtube.com/pisigma" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p class="social-text">Stay connected with PI SIGMA across all our social platforms</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <p><a href="https://pisigma.org/about">About Us</a></p>
+        <p><a href="https://pisigma.org/chapters">Our Chapters</a></p>
+        <p><a href="https://pisigma.org/events">Events Calendar</a></p>
+        <p><a href="https://pisigma.org/alumni">Alumni Network</a></p>
+        <p><a href="https://pisigma.org/donate">Support PI SIGMA</a></p>
+      </div>
+      <div class="footer-section">
+        <h3>Resources</h3>
+        <p><a href="https://pisigma.org/privacy-policy">Privacy Policy</a></p>
+        <p><a href="https://pisigma.org/terms">Terms of Service</a></p>
+        <p><a href="https://pisigma.org/faq">FAQ</a></p>
+        <p><a href="https://pisigma.org/newsletter">Newsletter Signup</a></p>
+        <p><a href="https://pisigma.org/scholarships">Scholarship Programs</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 PI SIGMA Fraternity. All rights reserved.</p>
+      <p class="footer-tagline">Brotherhood, Excellence, Service</p>
+    </div>
+  </footer>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const modal = document.querySelector('.gallery-modal');
+  const modalClose = document.querySelector('.modal-close');
+  const modalContent = document.querySelector('.modal-content');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      const filter = btn.dataset.filter;
+      galleryItems.forEach(item => {
+        if (filter === 'all' || item.dataset.category === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const content = item.querySelector('.gallery-content').cloneNode(true);
+      modalContent.innerHTML = '';
+      modalContent.appendChild(content);
+      modal.style.display = 'block';
+    });
+  });
+
+  modalClose.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+});
+</script>
+</body></html>
